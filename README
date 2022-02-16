@@ -1,0 +1,4 @@
+Create the certs using the script gen.sh
+Look at the client-ext.cnf and server-ext.cnf files, I have added another DNS:testing, use his while creating certs
+Add  the following entry into /etc/hosts file, which is very important
+127.0.0.1   testing
