@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>grpc-client</module>
+        <module>grpc-server</module>
+        <module>common-proto</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.9</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+
+    <groupId>io.github.hakky54</groupId>
+    <artifactId>grpc-client-server-with-ssl-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+        <dependencies>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-netty</artifactId>
+                <version>${version.grpc}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-protobuf</artifactId>
+                <version>${version.grpc}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-stub</artifactId>
+                <version>${version.grpc}</version>
+            </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>com.google.protobuf</groupId>-->
+<!--                <artifactId>protobuf-java</artifactId>-->
+<!--                <version>${version.google.protobuf-java}</version>-->
+<!--            </dependency>-->
+
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>${version.javax.annotation-api}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+        </dependencies>
+
+
+    <properties>
+        <version.java>11</version.java>
+        <version.maven-surefire-plugin>3.0.0-M5</version.maven-surefire-plugin>
+        <version.maven-fail-safe>3.0.0-M5</version.maven-fail-safe>
+        <version.maven-compiler-plugin>3.9.0</version.maven-compiler-plugin>
+        <version.maven-shade-plugin>3.2.4</version.maven-shade-plugin>
+        <version.os-maven-plugin>1.7.0</version.os-maven-plugin>
+        <version.protobuf-maven-plugin>0.6.1</version.protobuf-maven-plugin>
+        <version.exec-maven-plugin>3.0.0</version.exec-maven-plugin>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <version.sslcontext-kickstart>7.2.1</version.sslcontext-kickstart>
+        <version.logcaptor>2.7.8</version.logcaptor>
+        <version.spring>2.6.3</version.spring>
+        <version.aspectweaver>1.9.7</version.aspectweaver>
+        <version.jackson>2.13.1</version.jackson>
+        <version.slf4j>1.7.35</version.slf4j>
+        <version.slf4j-simple>1.7.30</version.slf4j-simple>
+        <version.log4j-core>2.17.1</version.log4j-core>
+        <version.log4j-slf4j>2.17.1</version.log4j-slf4j>
+        <version.logback-classic>1.2.10</version.logback-classic>
+        <version.grpc>1.44.0</version.grpc>
+        <version.elasticsearch>7.16.3</version.elasticsearch>
+        <version.google.protobuf-java>3.19.4</version.google.protobuf-java>
+        <version.javax.annotation-api>1.3.2</version.javax.annotation-api>
+        <version.protoc>3.12.0</version.protoc>
+        <version.websocket-client>9.4.44.v20210927</version.websocket-client>
+        <version.assertj-core>3.22.0</version.assertj-core>
+        <version.junit>5.8.2</version.junit>
+        <version.mockito>4.3.1</version.mockito>
+        <version.consolecaptor>1.0.2</version.consolecaptor>
+    </properties>
+
+
+</project>
