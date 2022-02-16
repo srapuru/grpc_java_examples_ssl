@@ -1,7 +1,38 @@
-1) Create the certs using the script gen.sh
+1) Instructions:
+
+git clone 
+Create the certs using the script gen.sh
 
 2)Look at the client-ext.cnf and server-ext.cnf files, I have added another DNS:testing, use his while creating certs
 
 3) Add  the following entry into /etc/hosts file, which is very important
 
 127.0.0.1   testing
+
+4) I have used "testing" as service authority in grpc-client App.java file as shown below.
+
+public NameResolver newNameResolver(URI notUsedUri, NameResolver.Args args) {
+        System.out.println("====IN newNameResolver fun "+notUsedUri + ", and args are ---"+ args);
+        System.out.println("====IN  URI,"+notUsedUri.getScheme());
+        return new NameResolver() {
+            @Override
+            public String getServiceAuthority() {
+                System.out.println("====IN newNameResolver getService  ");
+                return
+                        "testing";
+               
+            }
+            public void start(Listener2 listener) {
+                System.out.println("====IN newNameResolver start  ");
+                listener.onResult(ResolutionResult.newBuilder().setAddresses(addresses).setAttributes(Attributes.EMPTY).build());
+
+            }
+            public void shutdown() {
+                System.out.println("====IN newNameResolver shut  ");
+            }
+        };
+    }
+
+
+
+ 
