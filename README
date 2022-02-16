@@ -1,9 +1,14 @@
-1) Instructions:
+1) Instructions to build
 
-git clone 
-Create the certs using the script gen.sh
+        git clone https://github.com/srapuru/grpc_java_examples_ssl.git
 
-2)Look at the client-ext.cnf and server-ext.cnf files, I have added another DNS:testing, use his while creating certs
+        cd  grpc_java_examples_ssl
+
+        mvn clean
+
+2) Create the certs using the script gen.sh
+
+Look at the client-ext.cnf and server-ext.cnf files, I have added another DNS:testing, use his while creating certs
 
 3) Add  the following entry into /etc/hosts file, which is very important
 
@@ -34,5 +39,40 @@ public NameResolver newNameResolver(URI notUsedUri, NameResolver.Args args) {
     }
 
 
+start the server:
+=================
+cd grpc-server
+java -jar target/grpc-server-1.0.0-SNAPSHOT.jar 
 
+should see the following output 
+
+in .....
+ server started, listening on port: 50002
+ server started, listening on port: 50001
+ server started, listening on port: 50000
  
+ 
+
+start the client
+=================
+cd grpc-client
+java -jar target/grpc-client-1.0.0-SNAPSHOT.jar 
+
+should see the following output 
+====IN newNameResolver fun service, and args are ---Args{defaultPort=443, proxyDetector=io.grpc.internal.ProxyDetectorImpl@fd07cbb, syncContext=io.grpc.SynchronizationContext@3571b748, serviceConfigParser=io.grpc.internal.ScParser@3e96bacf, scheduledExecutorService=io.grpc.internal.ManagedChannelImpl$RestrictedScheduledExecutor@484970b0, channelLogger=io.grpc.internal.ChannelLoggerImpl@4470f8a6, executor=io.grpc.internal.ManagedChannelImpl$3@7c83dc97}
+====IN  URI,null
+====IN newNameResolver getService  
+====IN newNameResolver start  
+Hello name, nice to meet you!
+Hello name, nice to meet you!
+Hello name, nice to meet you!
+Hello name, nice to meet you!
+Hello name, nice to meet you!
+Hello name, nice to meet you!
+Hello name, nice to meet you!
+Hello name, nice to meet you!
+Hello name, nice to meet you!
+Hello name, nice to meet you!
+====IN newNameResolver shut  
+
+
