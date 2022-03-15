@@ -116,7 +116,7 @@ class MultiAddressNameResolverFactory extends NameResolver.Factory {
             public String getServiceAuthority() {
                 System.out.println("====IN newNameResolver getService  ");
                 return
-                        "testing";
+                        "testing"; // SAN name
                 //"0.0.0.0";
                 //"fakeAuthority";
             }
